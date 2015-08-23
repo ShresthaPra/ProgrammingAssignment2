@@ -7,20 +7,20 @@
 
 makeCacheMatrix <- function(x = matrix()) {
     ##Seting MatrixA as NULL
-    matrixA <-NULL
+    matrixAInverse <-NULL
     
-    ##setMatrixA-> to set up the matrix(lets say A) which is to be Inversed and nullify the cached matrixA(Inversed Matrix)
+    ##setMatrixA-> to set up the matrix(lets say matrixA) which is to be Inversed and nullify the cached matrixAInverse(Inversed Matrix)
     setMatrixA<-function(y){
         x<<-y
-        matrixA<<-NULL
+        matrixAInverse<<-NULL
     }
-    ##getMatrixA-> to get back(inputted A) the matrix that was set up
+    ##getMatrixA-> to get back(inputted matrixA) the matrix that was set up
     getMatrixA<-function(){x}
     
-    ##setMatrixAInverse-> to set the A Inverse(cacluclated in cacheSolve) to MatrixA
-    setMatrixAInverse<-function(matrixAInverse){matrixA<<-matrixAInverse}
-    ##getMatrixAInverse-> to get the MatrixA(Inverse of A) value which was already set in setMatrixAInverse
-    getMatrixAInverse<-function(){matrixA}
+    ##setMatrixAInverse-> to set the matrixAInversed(cacluclated in cacheSolve) to matrixAInverse
+    setMatrixAInverse<-function(matrixAInversed){matrixAInverse<<-matrixAInversed}
+    ##getMatrixAInverse-> to get the matrixAInverse(Inverse of matrixA) value which was already set in setMatrixAInverse
+    getMatrixAInverse<-function(){matrixAInverse}
     ##creates a special vector
     list(setMatrixA=setMatrixA,getMatrixA=getMatrixA,setMatrixAInverse=setMatrixAInverse,getMatrixAInverse=getMatrixAInverse)
 }
